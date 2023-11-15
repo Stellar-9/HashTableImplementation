@@ -89,23 +89,3 @@ public:
         throw std::range_error("Key not found");
     }
 };
-
-int main() {
-    HashTable<int, std::string> myHashTable;
-
-    // Example usage
-    myHashTable.insert(1, "Hello");
-    myHashTable.insert(2, "World");
-    myHashTable.insert(3, "C++");
-
-    try {
-        std::cout << myHashTable.get(2) << std::endl; // Should print "World"
-        myHashTable.remove(2);
-        std::cout << myHashTable.get(2) << std::endl; // Should throw an exception
-    }
-    catch (const std::range_error& e) {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
-
-    return 0;
-}
